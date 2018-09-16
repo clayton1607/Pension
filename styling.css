@@ -1,0 +1,42 @@
+
+  body{
+    background-repeat:no-repeat;
+
+     background-size:cover;
+
+  }
+  .faq{
+  background-color: #0d71e2;
+  opacity: 0.9;
+  /* border-radius: 500px; */
+}
+.class1{
+  padding-top: 35px;
+  padding-left: 300px;
+  color: white;
+  font-family: sans-serif;
+
+}
+.quests{
+  padding-top: 35px;
+  padding-left: 300px;
+}
+/* .but{
+
+  background-image: url(plus.jpg);
+  background-repeat: no-repeat;
+  background-position: <left|right>;
+  padding-<left|right>: 30px;
+} */
+#content1{
+  display: none;
+
+}
+#content2{
+  display: none;
+
+}
+#content3{
+  display: none;
+
+}
