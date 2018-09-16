@@ -8,7 +8,19 @@
   <h1>Application Form for National Pension Scheme</h1>
   <h2>2.Identity Proof Details(Any one of the documents need to be provided along with the identification number)*</h2>
   <table border="0" cellpadding="3" cellspacing="0">
-
+    <script type="text/javascript" >
+      function ValidateForm(frm) {
+      if (frm.Passport.value == "" && frm.Pan.value == "") {
+        alert('Any one of the documents need to be provided along with the identification number');
+        frm.Passport.focus();
+        return false;
+      }
+      // if (frm.Pan.value == "") { alert('Last name is required.'); frm.Last_Name.focus(); return false; }
+      // if (frm.Drivingid.value == "") { alert('Father Name is required.'); frm.Father_Name.focus(); return false; }
+      // if (frm.othersid.value == "") { alert('Mother Name is required.'); frm.Mother_Name.focus(); return false; }
+      if (frm.uid.value == true) { alert('Plz. chech the checkbox to proceed'); frm.uid.focus(); return false; }
+    }
+    </script>
   <tr>
   <td><label for="Passport"><b>Passport</b></label></td>
   <td><input name="Passport" type="text" maxlength="50" style="width: 260px" /></td>
@@ -37,7 +49,7 @@
 <td><input name="othersid_no" type="text" maxlength="50" style="width: 260px" /></td>
 </tr>
 <tr><label for="uid"><b>UID Aadhar [ Please tick () ] </b></label></tr>
-<tr><input name="uid" type="checkbox" value="Male" checked="checked" />
+<tr><input name="uid" type="checkbox" value="Yes" checked="checked" />
 I hereby authorize CRA registered with Pension Fund Regulatory and Development Authority (PFRDA) to use my Aadhaar details for National Pension System (NPS)
 and authenticate my identity through the Aadhaar Authentication system (Aadhaar based e-KYC services of UIDAI) in accordance with the provisions of the Aadhaar
 (Targeted Delivery of Financial and other Subsidies, Benefits and Services) Act, 2016 and the allied rules and regulations notified thereunder. I understand that the
