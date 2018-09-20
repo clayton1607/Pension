@@ -4,28 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-preset-env": "^1.7.0",
-<<<<<<< HEAD
     "body-parser": "^1.18.3",
-=======
->>>>>>> 6efb62de77a85a5d3cfbfea587b6d619009d0ec7
     "express": "^4.16.3",
     "expresss": "0.0.0",
     "googleapis": "^27.0.0",
     "hbs": "^4.0.1",
     "js-base64": "^2.4.9",
-<<<<<<< HEAD
     "mysql": "^2.16.0",
     "nodemailer": "^4.6.8",
     "nodemon": "^1.18.4",
-    "sql": "^0.78.0"
-=======
-    "nodemon": "^1.18.4"
->>>>>>> 6efb62de77a85a5d3cfbfea587b6d619009d0ec7
+    "sql": "^0.78.0",
+    "nodemon" : "^1.18.4"
+
   }
 }

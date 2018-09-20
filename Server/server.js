@@ -1,10 +1,10 @@
 const express = require('express');
 const hbs =require('hbs');
 const fs = require('fs');
-<<<<<<< HEAD
 const nodemailer=require('nodemailer');
-const mysql=require('mysql');
+//const mysql=require('mysql');
 const bodyParser = require('body-parser');
+const port = process.env.PORT || 3000;
 var app =express();
 //var nodemailer = require('nodemailer');
 var {con}=require('./db/mysql.js');
@@ -12,10 +12,6 @@ var {user}=require('./tables/users.js');
 
 app.use(express.static(__dirname+'/Public'));
 app.use(bodyParser.json());
-=======
-var app =express();
-app.use(express.static(__dirname+'/Public'));
->>>>>>> 6efb62de77a85a5d3cfbfea587b6d619009d0ec7
 console.log(__dirname+'/Public');
 app.set('view engine','hbs');
 
@@ -41,7 +37,6 @@ app.get('/FAQ',(req,res)=>{
 app.get('/otp',(req,res)=>{
   res.render('Public/Home/Aunthentication/otp.hbs');
 });
-<<<<<<< HEAD
 // con.connect(function(err) {
 //   if (err) throw err;
 //   console.log("Connected!");
@@ -72,7 +67,7 @@ var otp=Math.floor(100000 + Math.random() * 900000);
 //   service: 'gmail',
 //   auth: {
 //     user: 'claytonpereira1998@gmail.com',
-//     pass: 'clayton@16071998iqweasd'
+//     pass: '****************************'
 //   }
 // });
 //
@@ -90,8 +85,5 @@ var otp=Math.floor(100000 + Math.random() * 900000);
 //     console.log('Email sent: ' + info.response);
 //   }
 // });
-=======
-
->>>>>>> 6efb62de77a85a5d3cfbfea587b6d619009d0ec7
-app.listen(3000);
+app.listen(port);
 //home/clayton/Project/Pension/Server/views
