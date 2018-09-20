@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html><head><link rel="shortcut icon" href="../favicon.ico" />
+<title>Pension Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="home1.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h6><a href="./Aunthentication/Login.html">Login</a><br><a href="./Aunthentication/Signup.html">SignUp</a></h6>
+    <h6 class="w3-padding-64"><b>Pension And Life Insurance Webportal</b></h6>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About Us</a>
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Organisation</a>
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">All about Pension</a>
+    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Pension Payment Scheme</a>
+    <a href="../Dashboard/Forum/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FAQ</a>
+    <a href="../Dashboard/Forum/forum_home.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Forum</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+
+    <a href="./Aunthentication/Login.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Login</a>
+    <a href="./Aunthentication/Signup.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Signup</a>
+
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Company Name</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+
+
+
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b><img src="1.png" alt="" align="left" width="150px" height="200px">Pension And Life Insurance Webportal<br>Government of India</b></h1>
+  </div>
+  <div>
+    <br>
+    <br>
+    <br>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Showcase.</b></h1>
+    <hr style="width:500px;border:5px solid red" class="w3-round">
+  </div>
+
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+
+      <p>With a view to bring into existence a centrally controlled administered mechanism involving Pensioners Associations in the country, the Pensioners' Portal would function as a single window mechanism
+
+  The  department  of Pension & Pensioners'  Welfare  is  the nodal department  for  formulation of policies  relating  to pension & other retirement benefits of Central Government Pensioners/Family Pensioners. It also serves as a forum for redress of Pensioners' Grievances
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Organisation</b></h1>
+    <hr style="width:500px;border:5px solid red" class="w3-round">
+      <p>WThe Department of Pension & Pensioners' Welfare is the nodal department for formulation of policies relating to pension and other retirement benefits of Central Govt. employees covered under CCS (Pension) Rules, 1972 Apart from formulation of pension policy for the Central Govt. Pensioners/Family Pensioners, it also seeks to promote pensioners welfare and serves as a forum for the redressal of Pensioners' grievances.
+
+However, the pensioners of Ministries of Railways and Defence are governed by their respective pension rules having their independent administrative set up. The employees working in the establishments belonging to the class of industries/ other establishment listed in the schedule appended to EPF & MP Act.1950 are covered under EPS Scheme administered by Ministry of Labour. Further, the pensionary matters of those who joined/ would join Central Government on or after 1.1.2004, are dealt by Ministry of Finance under New Pension scheme
+    </p>
+  </div>
+
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>All About Pension</b></h1>
+    <hr style="width:500px;border:5px solid red" class="w3-round">
+    <p>The best team in the world.</p>
+    <p>Superannuation
+A superannuation pension shall be granted to a Government servant who is retired on his attaining the age of superannuation.
+
+Retiring Pension:
+
+A retiring pension shall be granted to a Government servant who retires, or is retired before attaining the age of Superannuation or to a Government servant who, on being declared surplus opts, for voluntary retirement.
+
+Voluntary Retirement:
+
+Any Government servant can apply for voluntary retirement, three months in advance, only after the completion of twenty years of his qualifying service, provided there is no vigilance or Departmental Enquiry pending /initiated against him/her.
+
+Invalid Pension:
+
+Invalid Pension may be granted if a Government servant applies for retirement from the service on account of any bodily or mental infirmity which permanently incapacitates him/her for the service. The request for invalid pension has to be supported by medical report from the competent medical board.
+
+Compensation Pension:
+
+If a Government servant is selected for discharge owing to the abolition of a permanent post, he shall, unless he is appointed to another post the conditions of which are deemed by the authority competent to discharge him/her to be at least equal to those of his own, have the option.
+
+(a) of taking compensation pension to which he may be entitled for the service he had rendered, or
+
+(b) of accepting another appointment on such pay as may be offered and continuing to count his previous service for pension.
+
+Compulsory Retirement Pension:
+
+A Government servant compulsorily retired from service as a penalty may be granted, by the authority competent to impose such penalty, pension or gratuity, or both at a rate not less than two-thirds and not more than full compensation pension or gratuity, or both admissible to him on the date of his compulsory retirement. The pension granted or allowed shall not be less than Rs. 9,000/- p.m.
+
+Compassionate Allowance:
+
+(i) A Government servant who is dismissed or removed from service shall forfeit his pension and gratuity:
+
+Provided that the authority competent to dismiss or remove him from service may, if the case is deserving of special consideration, sanction a compassionate allowance not exceeding two-thirds of pension or gratuity or both which would have been admissible to him if he had retired on compensation pension.
+
+(ii) A compassionate allowance sanctioned under the proviso to sub-rule (i) shall not be less than Rs. 9,000/- p.m.
+
+Extraordinary Pension:
+
+Extraordinary Pension in the form of Disability pension/extraordinary family pension may be paid to the Government servant/his family if disablement/death (or the aggravation of disablement/death)of the Government servant, during his service, are attributed to the Government service. For the award of extraordinary pension, there should thus be a casual connection between disablement and Government service; and death and Government service, for attributability or aggravation to be conceded. The quantum of the pension, however,depends upon the category of the disablement/death.
+
+Government servants appointed on or after 1.1.2004 are not covered by the CCS(Extraordinary Pension) Rules.
+
+Family Pension:
+
+Family pension is granted to the widow / widower and where there is no widow / widower to the children of a Government servant who entered in service in a pensionable establishment on or after 01/01/1964 but on or before 31.12.2003 or having entered service prior to that date came to be governed by the provisions of the Family Pension Scheme for Central Government Employees, 1964 if such a Government servant-
+
+(i) dies while in service on or after 01/01/1964 or
+
+(ii) retired/died before 31.12.1963 or
+
+(iii) retires on or after 01/01/1964
+
+and at the time of his death was in receipt of pension.
+
+Family pension is payable to the children up to 25 years of their age, or marriage or till they start earning a monthly income exceeding Rs.9,000/- +  DA admissible from time to time p.m. whichever is earlier.
+
+Widow daughter / divorced daughter/ unmarried daughter of deceased Government servant is also entitled for the family pension till her remarriage or up to life time or starts earning a monthly income exceeding Rs.9,000/- +  DA admissible from time to time p.m. whichever is earlier.
+
+Family pension is payable to wholly dependent parents of the deceased Government servants w.e.f. 01/01/98, when he/she is not survived by a widow or eligible child. The family pension will be payable to mother first , failing which to the father.
+
+If the son or daughter, of a Government servant is suffering from any disorder or disability of mind or is physically crippled or disabled so as to render him or her unable to earn a living even after attaining the age of 25 years, the family pension can continue to be paid for life time subject to  conditions.
+
+
+    </p>
+    <p><b>Our designers are thoughtfully chosen</b>:</p>
+  </div>
+
+  <!-- The Team -->
+
+
+  <!-- Packages / Pricing Tables -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Pension Payment Scheme.</b></h1>
+    <hr style="width:500px;border:5px solid red" class="w3-round">
+    <p>Swatantra Sainik Samman Pension Scheme, 1980 (Salient Features)
+Scheme for payment of pensions to Central Government Civil pensioners through authorised Banks
+Defined Contribution Pension Scheme (National Pension System)
+National Social Assistance Programme(NSAP) administered by Ministry of Rural Development</p>
+  </div>
+<!--
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+        <li class="w3-padding-16">Floorplanning</li>
+        <li class="w3-padding-16">10 hours support</li>
+        <li class="w3-padding-16">Photography</li>
+        <li class="w3-padding-16">20% furniture discount</li>
+        <li class="w3-padding-16">Good deals</li>
+        <li class="w3-padding-16">
+          <h2>$ 199</h2>
+          <span class="w3-opacity">per room</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+        <li class="w3-padding-16">Floorplanning</li>
+        <li class="w3-padding-16">50 hours support</li>
+        <li class="w3-padding-16">Photography</li>
+        <li class="w3-padding-16">50% furniture discount</li>
+        <li class="w3-padding-16">GREAT deals</li>
+        <li class="w3-padding-16">
+          <h2>$ 249</h2>
+          <span class="w3-opacity">per room</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+-->
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+    </form>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<!--
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+-->
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
