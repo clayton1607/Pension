@@ -1,11 +1,11 @@
 var {con}=require('../db/mysql');
+var users=con;
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
-  con.query(sql, function (err, result) {
+  let sql = "CREATE TABLE if not exists users(username varchar(255) primary key,email varchar(255),password varchar(255),application_status boolean)";
+  users.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 record inserted");
   });
-});
+
+
+module.exports={users};

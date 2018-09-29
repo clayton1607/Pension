@@ -2,41 +2,36 @@ const express = require('express');
 const hbs =require('hbs');
 const fs = require('fs');
 const nodemailer=require('nodemailer');
-//const mysql=require('mysql');
+const mysql=require('mysql');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
-var app =express();
+
 //var nodemailer = require('nodemailer');
-var {con}=require('./db/mysql.js');
-var {user}=require('./tables/users.js');
 
-app.use(express.static(__dirname+'/Public'));
-app.use(bodyParser.json());
-console.log(__dirname+'/Public');
-app.set('view engine','hbs');
+//Mysql database
+//var {con}=require('./db/mysql.js');
+var {contact}=require('./tables/contact.js');
+var {users}=require('./tables/users.js');
+var {otpdb}=require('./tables/otpdb.js');
+//var {admin}=require('./tables/admin.js');
+//var {insurance_id}=require('./tables/insurance_id.js');
+//var {insurance_add}=require('./tables/insurance_add.js');
+//var {insurance_bank}=require('./tables/insurance_bank.js');
+//var {insurance}=require('./tables/insurance.js');
+//var {pension}=require('./tables/pension.js');
+//var {pension_id}=require('./tables/pension_id.js');
+//var {pension_add}=require('./tables/pension_add.js');
+//var {pension_bank}=require('./tables/pension_bank.js');
+//var {transporter}=require('./email.js');
+//var {otp}=require('./email.js');
+var {mailmake}=require('./email.js');
+var {mailsend}=require('./email.js');
+var {app}=require('./views.js');
+var {otp}=require('./otp.js');
+app.use(bodyParser.urlencoded({ extended: true }));
+//console.log(otp);
 
-app.get('/',(req,res)=>{
-  res.render('Public/Home/home.hbs');
-});
-app.get('/home',(req,res)=>{
-  res.render('Public/Home/home.hbs');
-});
-app.get('/login',(req,res)=>{
-  res.render('Public/Home/Aunthentication/Login.hbs');
-});
-app.get('/signup',(req,res)=>{
-  res.render('Public/Home/Aunthentication/Signup.hbs');
-});
-app.get('/otp',(req,res)=>{
-  res.render('Public/Home/Aunthentication/otp.hbs');
-});
-app.get('/FAQ',(req,res)=>{
-  res.render('Public/Dashboard/Forum/index.hbs');
-});
-
-app.get('/otp',(req,res)=>{
-  res.render('Public/Home/Aunthentication/otp.hbs');
-});
+// var otp=Math.floor(100000 + Math.random() * 900000);
 // con.connect(function(err) {
 //   if (err) throw err;
 //   console.log("Connected!");
@@ -46,44 +41,65 @@ app.get('/otp',(req,res)=>{
 //     console.log("Table created");
 //   });
 // });
+
 app.post('/login',(req,res)=>{
   console.log(req.body);
 
-  let stmt = `INSERT INTO users(email,password)
-            VALUES(?,?)`;
-  let todo = [req.body.email,req.body.password];
-  con.query(stmt,todo, function (err, result) {
-    if (err) throw err;
-    console.log("1 record inserted");
+  let stmt = `SELECT * FROM users WHERE username=? AND password=?`;
+  //let todo = [req.body.username,req.body.email,req.body.password,false];
+  users.query(stmt,[req.body.username,req.body.password],function (err, result,fields) {
+  //  if (err) throw err;
+    if(result[0].username ==req.body.username && result[0].password==req.body.password){
+      otp.otp_key=Math.floor(100000 + Math.random() * 900000);
+      mailmake.text=otp.otp_key.toString();
+      mailmake.to=result[0].email;
+      mailsend.send();
+      res.redirect('/otp');
+      console.log('false');
+    }
+    //console.log(result);
+    //console.log(result[0].username+'hello');
+
+    //res.render('Public/Home/Aunthentication/otp.hbs');
   });
+  //res.redirect('/otp');
+});
+app.post('/home',(req,res)=>{
+  let stmt = `INSERT INTO contact(name_home,email,message)
+            VALUES(?,?,?)`;
+  let todo = [req.body.Name,req.body.Email,req.body.Message];
+  contact.query(stmt,todo,(err,result)=>{
+    if(err)
+      console.log(err);
+    console.log("1 message inserted");
+    res.redirect('/home');
+  })
+});
+app.post('/signup',(req,res)=>{
+  console.log(req.body);
 
-})
+  let stmt = `INSERT INTO users(username,email,password,application_status)
+            VALUES(?,?,?,?)`;
+  let todo = [req.body.username,req.body.email,req.body.password,false];
+  users.query(stmt,todo, function (err, result) {
+    if (err)
+      console.log(err);
+    console.log("1 record inserted");
+    otp.otp_key=Math.floor(100000 + Math.random() * 900000);
+    console.log(otp.otp_key);
+    mailmake.text=otp.otp_key.toString();
+    mailmake.to=req.body.email;
+    mailsend.send();
+    res.redirect('/otp');
+    //res.render('Public/Home/Aunthentication/otp.hbs');
+  });
+});
+app.post('/otp',(req,res)=>{
+    if(otp.otp_key==req.body.otp){
+      res.redirect('/dashboard');
+    }
+});
 
-console.log(
-  Math.floor(100000 + Math.random() * 900000)
-);
-var otp=Math.floor(100000 + Math.random() * 900000);
-// var transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: 'claytonpereira1998@gmail.com',
-//     pass: '****************************'
-//   }
-// });
-//
-// var mailOptions = {
-//   from: 'claytonpereira1998@gmail.com',
-//   to: 'claytonpereira1998@gmail.com',
-//   subject: 'Sending Email using Node.js',
-//   text: 'That was easy!'
-// };
-//
-// transporter.sendMail(mailOptions, function(error, info){
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log('Email sent: ' + info.response);
-//   }
-// });
+
 app.listen(port);
 //home/clayton/Project/Pension/Server/views
