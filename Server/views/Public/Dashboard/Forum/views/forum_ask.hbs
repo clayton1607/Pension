@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="shortcut icon" href="image/favicon.ico" >
+
+    <link rel="stylesheet" href="css/forum_style.css">
+
+    <meta charset="utf-8">
+    <title>ASK PAGE</title>
+  </head>
+  <body background="image/forum.jpg">
+<form class="has" action="/ask" method="post">
+  <br>
+<div class="wel" style="font-family: sans-serif; ">
+  <h3>You are asking your first question!</h3>
+
+     <h3>How to quickly get a good answer:</h3>
+
+         <h4>1.Keep your question short and to the point </h4>
+         <h4>2.Check for grammar or spelling errors</h4>
+         <h4>3.Phrase it like a question</h4>
+         <h4>4.Make sure it hasn't been asked before</h4>
+</div>
+
+<div class="questionc">
+  <br>
+  <h1 style="color : white; font-family: sans-serif; " align="center">Whats On Your Mind?</h1>
+  <input class="questionin" type="text" name="yourq" value="" placeholder="Start your question with 'What','How','Why',etc." required/>
+  <div class=""  align="center">
+    <h4  style="color:white;">Category of query:
+    <select  name="drop" >
+      <option value="general">General</option>
+      <option value="dr">Queries for DR </option>
+      <option value="nps">NPS Related Queries</option>
+      <option value="defence">Defence Pensioners Related</option>
+        <option value="gratuity">Gratuity Related</option>
+    </select>
+
+</h3>
+
+  </div>
+
+  <button  style=" color: white;font-size: 20px;margin-top: 0px;margin-bottom: 50px;margin-left: 840px;height: 40px;background-color:#aa0f06;"type="submit" name="button">Add Question</button>
+  <br>
+
+</div>
+</form>
+<br>
+<br>
+<form class="" action="/undo" method="post">
+  <button style=" color: white;background-color:#8e3062;" class="btn" type="submit" name="undo"> <img src="./image/undo.png" height="25px" width="25px"  alt="Error">Click to undo the question</button>
+
+</form>
+<center><a href="/forumcat"><h3>Back to Forums Page</h3></a> </center>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+  </body>
+</html>

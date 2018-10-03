@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="shortcut icon" href="image/favicon.ico" >
+    <meta charset="utf-8">
+
+  <link rel="stylesheet" href="css/forum_style.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Forum Home Page</title>
+  </head>
+  <body background="image/forum.jpg">
+
+<br>
+  <select style="margin-top:20px" onchange="location = this.value;" >
+  <option >Quick Access</option>
+  <option value="forum_ask.hbs">Compose Question</option>
+  <option value="#">Forum Home</a></option>
+  <option value="chatassis.hbs"><a href="">Chat Assistant</option>
+  <option value="index.hbs">Frequently Asked Questions</option>
+</select>
+<div class="pref">
+  Filter:
+  <select >
+
+  <option value="author">Author</option>
+  <option value="Answered">Answered</option>
+  <option value="UnAnswered">UnAnswered</option>
+  </select>
+  Sort:
+  <select  >
+
+  <option value="Votes">Votes</option>
+  <option value="recent">Most Recent</option>
+  <option value="replies">Total Replies</option>
+  </select>
+</div>
+
+<div  id="wrapper">
+  <div id="topusers">
+    <table border="1" width="300px" style="background-color: #f3f3f3;background-repeat:no-repeat;background-size:cover; " >
+      <tr>
+        <th ><h3 style=" color:#40506b;align:center;">Forum Contributors</h3>  </th>
+      </tr>
+
+
+      {{#each list2}}
+
+
+
+              <tr>
+            <td><h4 align="center" >{{topuser}}</h4> </td>
+
+            </tr>
+
+      {{/each}}
+
+
+
+    </table>
+
+  </div>
+  <div id="threads" style="background-color:#ffffff;" >
+    <!-- <br>  Contents will go in here , Will contain Thread conetents obtained form the database -->
+
+
+
+<div class="general" style=" color: black;background-color:#f3f3f3;">
+  <h3 style="color:black;"> <img height="55px" width="55px" src="image/Chat.png" alt="">{{questionq}} </h3><h5 align="right">asked by {{asku}}</h5>
+</div>
+
+<div class="answers" style="color:black;" >
+  <table width="1050px">
+{{#each list1}}
+
+
+
+        <tr>
+      <td><h4 >{{answer}}</h4><h5 align="right">-{{usera}}</h5> <hr> </td>
+
+      </tr>
+
+{{/each}}
+</table>
+</div>
+
+
+    <!-- <div class="rtext">
+
+    <h3>Reply: <input class="reply" type="text" name="" value=""></h3>
+    </div> -->
+
+    <form class="" action="/reply" method="post">
+      <div class="reply_space">
+        <input  name="questno" value="{{askno}}" type="hidden">
+          <input  name="questtype" value="{{asktype}}" type="hidden">
+        <input placeholder="Type a reply" style=" font-size: 20px;height: 35px;width: 550px;"type="text" name="replyf" value="">
+
+        <button type="submit" class="w3-button w3-xmedium w3-circle w3-black">Reply</button>
+      </div>
+    </form>
+
+
+
+
+
+  </div>
+
+</div>
+
+
+  </body>
+</html>
