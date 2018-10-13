@@ -9,7 +9,7 @@
 </head>
 <html>
 <body>
-  <form action="applicationIdentity.html" id="EmploymentApplication100" method="post" onsubmit="return ValidateForm(this);">
+  <form enctype="multipart/form-data" action='/user/Personal' id="EmploymentApplication100" method="post" onsubmit="return ValidateForm(this);">
   <script type="text/javascript" >
   function ValidateForm(frm) {
   if (frm.First_Name.value == "") { alert('First name is required.'); frm.First_Name.focus(); return false; }
@@ -24,7 +24,7 @@
   if (frm.Phone.value == "") { alert('Phone is required.'); frm.Phone.focus(); return false; }
   return true; }
   </script>
-  <h1>Application Form for National Pension Scheme</h1>
+  <h1>Application Form for National Pension And Life Insurance Scheme</h1>
   <h2>1.Personal Details</h2>
   <table border="0" cellpadding="3" cellspacing="0">
   <tr>
@@ -32,6 +32,10 @@
     <td><input name="intials" type="radio" value="Shri" checked="checked" />Shri
     <input name="intials" type="radio" value="Smt." /> Smt.
     <input name="intials" type="radio" value="Kumari" />Kumari</td>
+  </tr>
+  <tr>
+  <td><label for="image"><b>Upload Profile Picture *</b></label></td>
+  <td><input name="image" type="file"  style="width: 260px" /></td>
   </tr>
   <tr>
   <td><label for="First_Name"><b>First name *</b></label></td>
@@ -138,7 +142,7 @@ a:hover {
 <br>
 <br>
 
-<a href="#" class="previous">&laquo; Previous</a>
+<a href="/" class="previous">&laquo; Previous</a>
 <input class="next" name="skip_submit" type="submit" value="Next" />
 
 

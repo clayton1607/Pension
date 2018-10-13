@@ -1,29 +1,121 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="/Dashboard/dash.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="/Home/home.css">
+<link rel="stylesheet" href="home1.css">
+<script src="/Dashboard/dash.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+.logo{
+  color: white !important;
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+</style>
 <body class="home">
+  <div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+
+<script>
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+
+</script>
     <div class="container-fluid display-table">
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 <div class="logo">
-                    <a hef="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
-                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
-                    </a>
+                    <h2>{{name}}</h2>
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                        <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li>
-                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calender</span></a></li>
-                        <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
-                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
+                        <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a href="#showcase"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span>Showcase</a></li>
+                        <li><a href="#application"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span>Application Status</a></li>
+                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span>Have a question? Forum</a></li>
+                        <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span>Chat with Expert</a></li>
+                        <li><a href="#contact"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Contact Us</span></a></li>
                     </ul>
                 </div>
             </div>
+
+
+
+
             <div class="col-md-10 col-sm-11 display-table-cell v-align">
                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
                 <div class="row">
@@ -40,20 +132,17 @@
                                 </div>
                             </nav>
                             <div class="search hidden-xs hidden-sm">
-                                <input type="text" placeholder="Search" id="search">
+                                <img src="/Home/1.png"  align="left" width="50px" height="50px"><b><h2>Pension and Life Insurance Web Portal</b></h2>
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="header-rightside">
                                 <ul class="list-inline header-top pull-right">
-                                    <li class="hidden-xs"><a href="#" class="add-project" data-toggle="modal" data-target="#add_project">Add Project</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                                    <li>
-                                        <a href="#" class="icon-info">
-                                            <i class="fa fa-bell" aria-hidden="true"></i>
-                                            <span class="label label-primary">3</span>
-                                        </a>
-                                    </li>
+
+                                    <li><a href="mailto:claytonpereira1998@gmail.com?subject=Hello&body=body" ><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+
+                                      <button class="openbtn" onclick="openNav()">☰ Notification</button>
+
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user">
                                             <b class="caret"></b></a>
@@ -77,8 +166,12 @@
                     </header>
                 </div>
                 <div class="user-dashboard">
-                    <h1>Hello, JS</h1>
-                    <div class="row">
+
+                    <h1>Welcome Back, <b>{{name}}</b></h1><h4>Last Login:{{login}}</h4>
+                    <h4>SignUP :{{signup}}</h4>
+                    <button type="button" class="btn btn-danger" name="button"><a href="/user/Pension/applicationIdentity">Fill Application Form</a></button><br><br>
+                    <button  type="button" class="btn btn-primary" name="button"><a href="#">Apply For Pension</a></button>&nbsp&nbsp&nbsp<button  type="button" class="btn btn-primary" name="button"><a href="#">Apply For Insurance</a></button>
+                    <!-- <div class="row">
                         <div class="col-md-5 col-sm-5 col-xs-12 gutter">
 
                             <div class="sales">
@@ -114,7 +207,57 @@
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+                    <!---Start of content-->
+                    <!-- Showcase--->
+                    <div>
+                      <h1 class="w3-xxxlarge" id="showcase"><b>Showcase.</b></h1>
+
                     </div>
+
+                    <!-- Photo grid (modal) -->
+                    <div class="w3-row-padding">
+
+                        <p><h3>With a view to bring into existence a centrally controlled administered mechanism involving Pensioners Associations in the country, the Pensioners' Portal would function as a single window mechanism
+
+                    The  department  of Pension & Pensioners'  Welfare  is  the nodal department  for  formulation of policies  relating  to pension & other retirement benefits of Central Government Pensioners/Family Pensioners. It also serves as a forum for redress of Pensioners' Grievances
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </h3></p>
+                    </div>
+                    <img src="/Dashboard/showcase.jpg" height="500px" width="50%"alt="">
+                    <div>
+                      <h1 class="w3-xxxlarge" id="application"><b>Application Status:</b></h1>
+
+                    </div>
+
+                    <!-- Photo grid (modal) -->
+                    <div class="w3-row-padding">
+                      <h3 class=""><b>Status : <b class="w3-text-red"> {{status}} </b><br>
+                        Total Pension Quotas: <b class="w3-text-red"> {{status}} </b><br>
+                        Pension Application Filled : <b class="w3-text-red"> {{status}} </b><br>
+                        Pension Application Issued : <b class="w3-text-red"> {{status}} </b><br> </b></h3>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="w3-container" id="contact" style="margin-top:75px">
+                      <h1 class="w3-xxxlarge "><b>Contact.</b></h1>
+                      <h2>
+                      <p>Do you want us to style your home? Fill out the form and fill me in with the details <br>  We love meeting new people!</p></h2>
+                      <form action="/home" method="post" >
+                        <div class="w3-section">
+                          <label>Name</label>
+                          <input class="w3-input w3-border" type="text" name="Name" required>
+                        </div>
+                        <div class="w3-section">
+                          <label>Email</label>
+                          <input class="w3-input w3-border" type="text" name="Email" required>
+                        </div>
+                        <div class="w3-section">
+                          <label>Message</label>
+                          <input class="w3-input w3-border" type="text" name="Message" required>
+                        </div>
+                        <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+                      </form
                 </div>
             </div>
         </div>

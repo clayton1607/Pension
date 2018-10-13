@@ -9,8 +9,8 @@
 </head>
 <html>
 <body>
-  <form action="appplicationAddress.html" id="EmploymentApplication100" method="post" onsubmit="return ValidateForm(this);">
-  <h1>Application Form for National Pension Scheme</h1>
+  <form enctype="multipart/form-data" action="/user/Pension/applicationIdentity" id="EmploymentApplication100" method="post" onsubmit="return ValidateForm(this);">
+  <h1>Application Form for National Pension And Life Insurance Scheme</h1>
   <h2>2.Identity Proof Details(Any one of the documents need to be provided along with the identification number)*</h2>
   <table border="0" cellpadding="3" cellspacing="0">
     <script type="text/javascript" >
@@ -26,25 +26,40 @@
       if (frm.uid.value == true) { alert('Plz. chech the checkbox to proceed'); frm.uid.focus(); return false; }
     }
     </script>
+    <tr>
+    <td><select name="id">
+    <option value="passport">Passport</option>
+    <option value="pan_card">Pan_card</option>
+    <option value="voterid">voterid</option>
+    <option value="drivinglicence">DrivingLicence-</option>
+    <option value="others">Others</option>
+  </select></td>
+    <td><label for="imageid"><b>Upload Passport</b></label></td>
+    <td><input name="imageid" type="file"  style="width: 260px" /></td>
+    </tr>
   <tr>
   <td><label for="Passport"><b>Passport</b></label></td>
   <td><input name="Passport" type="text" maxlength="50" style="width: 260px" /></td>
   <td><label for="Passport_expiry"><b>Passport Expiry date</b></label></td>
   <td><input name="Passport_expiry" type="date" value="1998-02-09" maxlength="50" style="width: 260px" /></td>
+
   </tr>
   <tr>
   <td><label for="Pan"><b>Pan Card </b></label></td>
   <td><input name="Pan" type="text" maxlength="50" style="width: 260px" /></td>
+
   </tr>
   <tr>
   <td><label for="Voterid"><b>Voter Id</b></label>
   <td><input name="Voterid" type="text" maxlength="50" style="width: 260px" />
+
 </tr>
 <tr>
 <td><label for="Drivingid"><b>Driving Licence</b></label></td>
 <td><input name="Drivingid" type="text" maxlength="50" style="width: 260px" /></td>
 <td><label for="Driving_expiry"><b>Driving Licence Expiry Date</b></label></td>
 <td><input name="Driving_expiry" type="date" value="1998-02-09" maxlength="50" style="width: 260px" /></td>
+
 </tr>
 
 <tr>
@@ -52,6 +67,7 @@
 <td><input name="othersid_name" type="text" maxlength="50" style="width: 260px" /></td>
 <td><label for="othersid"><b>Other Id No.</b></label></td>
 <td><input name="othersid_no" type="text" maxlength="50" style="width: 260px" /></td>
+
 </tr>
 <tr><label for="uid"><b>UID Aadhar [ Please tick () ] </b></label></tr>
 <tr><input name="uid" type="checkbox" value="Yes" checked="checked" />
@@ -104,7 +120,7 @@ a:hover {
 <br>
 <br>
 
-<a href="applicationPersonal.html" class="previous">&laquo; Previous</a>
+<a href="/user/dashboard" class="previous">&laquo; Previous</a>
 <input class="next" name="skip_submit" type="submit" value="Next" />
 
 
