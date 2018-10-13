@@ -7,6 +7,7 @@ const hbs =require('hbs');
 const bodyParser = require('body-parser');
 
 var app =express();
+<<<<<<< HEAD
 var {authenticate}=require('./middleware/authenticate.js');
 var {users}=require('./tables/users.js');
 
@@ -14,6 +15,10 @@ var {users}=require('./tables/users.js');
 app.use(express.static(__dirname+'/Public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+=======
+app.use(express.static(__dirname+'/Public'));
+app.use(bodyParser.json());
+>>>>>>> 3bf4a544fc2607c2c522e687ff335668bb8b26c0
 console.log(__dirname+'/Public');
 app.set('view engine','hbs');
 
@@ -50,8 +55,11 @@ app.get('/gratuity-calc',(req,res)=>{
 app.get('/pen-calc',(req,res)=>{
   res.render('Public/Home/Calculator/pen_calc.hbs');
 });
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 3bf4a544fc2607c2c522e687ff335668bb8b26c0
 module.exports={app};
