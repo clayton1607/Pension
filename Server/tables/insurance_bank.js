@@ -5,9 +5,8 @@ var insurance_bank=con;
     if (err) throw err;
     console.log("1 record inserted");
   });
-<<<<<<< HEAD
-=======
-});
->>>>>>> 3bf4a544fc2607c2c522e687ff335668bb8b26c0
+
+
+
 
 module.exports={insurance_bank};
