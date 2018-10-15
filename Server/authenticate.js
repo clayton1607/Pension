@@ -348,14 +348,15 @@ app.post('/user/Pension/applicationWorkBank',(req,res)=>{
 
 
 
-app.post('/apply/Pension',(res,req)=>{
-  users.query('UPDATE users SET pension_app=? WHERE username=? ',[true,req.user.username],(error,rows)=>{
+app.post('/apply/Pension',isAuthenticated,(res,req)=>{
+  console.log(username+"hello");
+  users.query('UPDATE users SET pension_app=? WHERE username=?',[true,req.user.username],(error,rows)=>{
     if (error)
       console.log(error);
   });
   res.redirect('/user/dashboard');
 });
-app.post('/apply/Insurance',(res,req)=>{
+app.post('/apply/Insurance',isAuthenticated,(res,req)=>{
   users.query('UPDATE users SET insurance_app=? WHERE username=? ',[true,req.user.username],(error,rows)=>{
     if (error)
       console.log(error);

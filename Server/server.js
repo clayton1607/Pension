@@ -125,9 +125,9 @@ app.post('/signup',(req,res)=>{
     });
     otp.otp_key=Math.floor(100000 + Math.random() * 900000);
     console.log(otp.otp_key);
-    // mailmake.text=otp.otp_key.toString();
-    // mailmake.to=req.body.email;
-    // mailsend.send();
+    mailmake.text=otp.otp_key.toString();
+    mailmake.to=req.body.email;
+    mailsend.send();
     res.redirect('/otp');
     //res.redirect('/otp');
     //res.render('Public/Home/Aunthentication/otp.hbs');
