@@ -109,6 +109,7 @@ function closeNav() {
                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span>Have a question? Forum</a></li>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm"></span>Chat with Expert</a></li>
                         <li><a href="#contact"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Contact Us</span></a></li>
+                        <li><a href="/logout"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -138,13 +139,13 @@ function closeNav() {
                         <div class="col-md-5">
                             <div class="header-rightside">
                                 <ul class="list-inline header-top pull-right">
-
+                                    <a href="/logout">LOGOUT</a>
                                     <li><a href="mailto:claytonpereira1998@gmail.com?subject=Hello&body=body" ><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 
                                       <button class="openbtn" onclick="openNav()">☰ Notification</button>
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{image}}" alt="user">
                                             <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>
@@ -170,7 +171,14 @@ function closeNav() {
                     <h1>Welcome Back, <b>{{name}}</b></h1><h4>Last Login:{{login}}</h4>
                     <h4>SignUP :{{signup}}</h4>
                     <button type="button" class="btn btn-danger" name="button"><a href="/user/Pension/applicationIdentity">Fill Application Form</a></button><br><br>
-                    <button  type="button" class="btn btn-primary" name="button"><a href="#">Apply For Pension</a></button>&nbsp&nbsp&nbsp<button  type="button" class="btn btn-primary" name="button"><a href="#">Apply For Insurance</a></button>
+                    <form class="" action="/apply/Pension" method="post">
+                    <button  type="submit" class="btn btn-primary" name="button">Apply For Pension</button>
+                    </form>&nbsp&nbsp&nbsp
+                    <form class="" action="/apply/Insurance" method="post">
+                    <button  type="submit" class="btn btn-primary" name="button">Apply For Insurance</button>
+                    </form>
+
+
                     <!-- <div class="row">
                         <div class="col-md-5 col-sm-5 col-xs-12 gutter">
 
@@ -223,7 +231,7 @@ function closeNav() {
                     The  department  of Pension & Pensioners'  Welfare  is  the nodal department  for  formulation of policies  relating  to pension & other retirement benefits of Central Government Pensioners/Family Pensioners. It also serves as a forum for redress of Pensioners' Grievances
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                       </h3></p>
-                    </div>
+                    </div>err
                     <img src="/Dashboard/showcase.jpg" height="500px" width="50%"alt="">
                     <div>
                       <h1 class="w3-xxxlarge" id="application"><b>Application Status:</b></h1>
@@ -235,7 +243,13 @@ function closeNav() {
                       <h3 class=""><b>Status : <b class="w3-text-red"> {{status}} </b><br>
                         Total Pension Quotas: <b class="w3-text-red"> {{status}} </b><br>
                         Pension Application Filled : <b class="w3-text-red"> {{status}} </b><br>
-                        Pension Application Issued : <b class="w3-text-red"> {{status}} </b><br> </b></h3>
+                        Pension Application Issued : <b class="w3-text-red"> {{status}} </b><br>
+                        Form Status : <b class="w3-text-red"> {{form_status}} </b><br>
+                        Form Status-Personal Details : <b class="w3-text-red"> {{form_personal}} </b><br>
+                        Form Status-Identity Proof : <b class="w3-text-red"> {{form_id}} </b><br>
+                        Form Status-Address Details : <b class="w3-text-red"> {{form_add}} </b><br>
+                        Form Status-Work & Bank Details : <b class="w3-text-red"> {{form_bank}} </b><br> </b></h3>
+
                     </div>
 
                     <!-- Contact -->

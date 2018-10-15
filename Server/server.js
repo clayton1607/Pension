@@ -65,9 +65,20 @@ app.post('/home',(req,res)=>{
     res.redirect('/home');
   })
 });
+app.post('/user/dashboard',(req,res)=>{
+  let stmt = `INSERT INTO contact(name_home,email,message)
+            VALUES(?,?,?)`;
+  let todo = [req.body.Name,req.body.Email,req.body.Message];
+  contact.query(stmt,todo,(err,result)=>{
+    if(err)
+      console.log(err);
+    console.log("1 message inserted");
+    res.redirect('/user/dashboard');
+  })
+});
 
 app.post("/login", passport.authenticate('local', {
-    successRedirect: '/user/dashboard',
+    successRedirect: '/user/Personal',
     failureRedirect: '/login',
     failureFlash: true
 }), function(req, res, info){

@@ -4,7 +4,20 @@ var passport          = require('passport');
 var LocalStrategy     = require('passport-local').Strategy;
 var sess              = require('express-session');
 
+var {contact}=require('./tables/contact.js');
+var {users}=require('./tables/users.js');
+var {otpdb}=require('./tables/otpdb.js');
+var {admin}=require('./tables/admin.js');
+var {pension}=require('./tables/pension.js');
+var {personal}=require('./tables/personal.js');
 
+var {pension_id}=require('./tables/pension_id.js');
+var {pension_add}=require('./tables/pension_add.js');
+var {pension_bank}=require('./tables/pension_bank.js');
+ var {insurance}=require('./tables/insurance.js');
+var {insurance_id}=require('./tables/insurance_id.js');
+var {insurance_add}=require('./tables/insurance_add.js');
+ var {insurance_bank}=require('./tables/insurance_bank.js');
 var {admin}=require('./tables/admin.js');
 var {app}=require('./views.js');
 app.use(sess({
@@ -59,26 +72,26 @@ passport.deserializeUser(function(username, done){
 function isAuthenticated(req, res, next) {
   if (req.isAuthenticated())
     return next();
-  res.redirect('/login');
+  res.redirect('/admin/login');
 };
 
 //admin
 
 app.post('/admin/login',passport.authenticate('local', {
-    successRedirect: '/user/dashboard',
-    failureRedirect: '/login',
+    successRedirect: '/admin/dashboard',
+    failureRedirect: '/admin/login',
     failureFlash: true
 }), function(req, res, info){
     res.render('/login/index',{'message' :req.flash('Suuccessful')});
     console.log("Suuccessful1");
 });
-app.get('/admin/login',isAuthenticated,(req,res)=>{
+app.get('/admin/login',(req,res)=>{
   res.render('Public/Home/Aunthentication/Alogin.hbs');
 });
-app.get('/admin/dashboard',isAuthenticated,(req,res)=>{
+app.get('/admin/dashboard',(req,res)=>{
   res.render('Public/Dashboard/DashboardAdmin.hbs');
 });
-app.get('/admin/dashboard/list',isAuthenticated,(req,res)=>{
+app.get('/admin/dashboard/list',(req,res)=>{
   let stmt = `SELECT username,last_login FROM admin`;
   //let todo = [req.body.username,req.body.email,req.body.password,false];
   admin.query(stmt,[req.body.username,req.body.password],function (err, result,fields) {
@@ -87,11 +100,11 @@ app.get('/admin/dashboard/list',isAuthenticated,(req,res)=>{
   //res.redirect('/otp');
 });
 //app.get('',(req,res)=>{});
-app.get('/admin/dashboard/application/status',isAuthenticated,(req,res)=>{
+app.get('/admin/dashboard/application/status',(req,res)=>{
 });
 
 
-app.post('/admin/dashboard',isAuthenticated,(req,res)=>{
+app.post('/admin/dashboard',(req,res)=>{
   console.log(req.body);
   if(req.body.dowhat=='1'){
     let stmt='Select * FROM pension where username=?';

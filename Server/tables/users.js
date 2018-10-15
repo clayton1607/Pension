@@ -2,7 +2,7 @@ var {con}=require('../db/mysql');
 const jwt =require('jsonwebtoken');
 var users=con;
 
-  let sql = "CREATE TABLE if not exists users(username varchar(255) primary key,email varchar(255),password varchar(255),token_accees varchar(255) not null,token varchar(255) not null,application_status boolean,last_login varchar(255),signup_date varchar(255))";
+  let sql = "CREATE TABLE if not exists users(username varchar(255) primary key,email varchar(255),password varchar(255),token_accees varchar(255) not null,token varchar(255) not null,application_status boolean,last_login varchar(255),signup_date varchar(255),pension_app boolean,insurance_app boolean)";
   users.query(sql, function (err, result) {
     if (err) throw err;
     console.log("1 record inserted");
